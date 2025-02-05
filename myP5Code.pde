@@ -7,10 +7,6 @@ setup = function() {
     drawFish(300, 200, color(0,200,200));
 };
 
-//🟢draw Function - will run on repeat
-draw = function(){
-
-};
 
 //🟢mouseClicked Function - will run when mouse is clicked
 mouseClicked = function(){
@@ -19,11 +15,29 @@ mouseClicked = function(){
 
 //🟡drawFish Function - will run when called
 var drawFish = function(fishX, fishY, fishColor){
-  textSize(80);
+  textSize(18);
   fill(fishColor);
-  text("𓆝", fishX, fishY);
+  text("🐟🐟🐟🐟", fishX, fishY);
+
 };
 
 
 
 
+var fishMove = 0; //varrible to track movement
+
+draw =function (){
+
+drawFish(400, 200 + fishMove);
+drawFish(70 + fishMove, 100);
+drawFish(300, 40 - fishMove);
+drawFish(297 - fishMove, 330);
+drawFish(200 + fishMove , 180 + fishMove);
+
+fishMove++;
+
+if(fishMove > 150){
+  fishMove = -200;
+}
+
+};
